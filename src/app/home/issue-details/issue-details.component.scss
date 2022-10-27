@@ -1,0 +1,113 @@
+.issue-details-container{
+  margin: 40px;
+
+}
+
+.issue-details-header{
+  background-color: #E5E5E5;
+  padding: 20px;
+}
+
+.issue-details-header h1{
+  color: #FE7912;
+}
+
+.issue-details-desc{
+  margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+}
+
+.desc-col-1{
+  width: 70%;
+}
+
+.desc-col-2{
+  width: 30%;
+}
+
+.issue-details-desc h3{
+  color: #85929C;
+  font-size: large;
+}
+
+.issue-details-desc p{
+  font-size: medium;
+  margin-bottom: 40px;
+}
+
+
+.btn-form, .btn-form-rs{
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+
+.btn-form{
+  background-color: black;
+  color: white;
+  width: 100%;
+  font-size: large;
+}
+
+.btn-form-tag{
+  background-color: black;
+  color: white;
+  margin-left: 20px;
+}
+
+.btn-form-priority {
+  background-color: red;
+  color: white;
+  margin-left: 20px;
+}
+
+button{
+  margin-right: 3em;
+  border: 1px solid black;
+}
+
+.details-row-1{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.details-row-2{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.details-col{
+  width: 50%;
+}
+
+.add-comment{
+  font-size: medium;
+  color: red;
+}
+
+.comment-added{
+  margin-left: 100px;
+}
+
+.issue-details-right-pane{
+  background-color: #E5E5E5;
+  height: fit-content;
+  padding: 20px;
+}
+
+.input-field-issue-details{
+  background-color: white;
+  width: 100%;
+}
+
+.side-pane-details{
+  margin-top: 20px;
+}
+
+.side-pane-details h4{
+  color: #85929C;
+
+}

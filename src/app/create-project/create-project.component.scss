@@ -1,0 +1,62 @@
+// mat-grid-list{
+//   background-color:red;
+// }
+// .bigbox{
+//   margin: 30px;
+//   width: 80%;
+//   height: 500px;
+//   //background-color: pink;
+//   color: black;
+// }
+// mat-form-field{
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: center;
+// gap: 10px;
+// }
+// row1{
+//   width: 100%;
+// }
+// button{
+
+//   margin-right: 3em;
+//   border: 1px solid black;
+
+// }
+
+.create-container{
+  margin: 40px;
+}
+
+.input-field-left{
+  width: 100%;
+  padding-right: 20px;
+}
+
+.input-field-right{
+  width: 100%;
+  padding-left: 20px;
+}
+
+.form-btn-container{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-form, .btn-form-rs{
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+
+.btn-form{
+  background-color: black;
+  color: white;
+
+}
+
+button{
+  margin-right: 3em;
+  border: 1px solid black;
+}

@@ -1,0 +1,97 @@
+<div class="issue-details-container">
+  <div class="issue-details-header">
+    <h1>HU 22.0 Angular Track</h1>
+    <h4>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h4>
+  </div>
+
+  <div class="issue-details-desc">
+    <div class="desc-col-1">
+      <h3>Description :</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus possimus
+        nobis praesentium perspiciatis quae. Quaerat mollitia odit sint, nostrum
+        recusandae eum corrupti? Blanditiis accusamus accusantium obcaecati
+        consequuntur recusandae dolore deserunt?
+      </p>
+      <hr />
+
+      <h2>Details</h2>
+
+      <div class="desc-details-container">
+        <div class="details-row-1">
+          <div class="details-col">
+            <p>Type : <img src="" />Bug</p>
+          </div>
+          <div class="details-col">
+            <p>Sprint : CW_21</p>
+          </div>
+        </div>
+
+        <div class="details-row-1">
+          <div class="details-col">
+            <p>Tags : <button mat-stroked-button class="btn-form-tag">ANGULAR</button></p>
+          </div>
+          <div class="details-col">
+            <p>Type : <button mat-stroked-button class="btn-form-priority" >HIGH</button></p>
+          </div>
+        </div>
+
+        <div class="details-row-1">
+          <div class="details-col">
+            <p>Story Points : 3
+          </div>
+        </div>
+      </div>
+      <hr/>
+
+      <div class="comments">
+        <h1>Comments | <img src=""/> <span class="add-comment"> Add Comment</span></h1>
+
+        <h2>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi nisi aspernatur consequuntur id pariatur adipisci, </h2>
+        <h4>Posted on : 31-01-2022 <span class="comment-added"> Added By : Pushpa Raj</span></h4>
+
+        <hr/>
+
+        <h2>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi nisi aspernatur consequuntur id pariatur adipisci, </h2>
+        <h4>Posted on : 31-01-2022 <span class="comment-added"> Added By : Pushpa Raj</span></h4>
+      </div>
+
+
+    </div>
+    <!-- ending the row wise details ended  -->
+    
+    <div class="desc-col-2">
+      <button mat-stroked-button class="btn-form">EDIT ISSUE</button>
+
+      <div class="issue-details-right-pane">
+        <h2>Status</h2>
+        <mat-form-field appearance="fill" class="input-field-issue-details">
+          <mat-label>Status</mat-label>
+        <mat-select >
+          <mat-option value="" selected disabled>Select Project</mat-option>
+        <mat-option>Todo</mat-option>
+        <mat-option>Development</mat-option>
+        <mat-option>Testing</mat-option>
+        <mat-option>Completed</mat-option>
+        </mat-select>
+        </mat-form-field>
+        <h2>Assignee</h2>
+        <mat-form-field appearance="fill" class="input-field-issue-details">
+          <mat-label>Filter Assignee</mat-label>
+          <mat-select ngModel id="owner" name="owner" type="number">
+            <mat-option value="" selected disabled>Select Owner</mat-option>
+          <mat-option *ngFor="let user of owner" value="{{ user.id}}"> {{user.name}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <div class="side-pane-details">
+          <h4>Created On : 31-01-2022</h4>
+          <h4>Last Updated : 31-01-2022 | 4:30 PM</h4>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+</div>

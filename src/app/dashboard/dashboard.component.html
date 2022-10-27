@@ -1,0 +1,116 @@
+<form
+  class="create-container"
+  #createIssueForm="ngForm"
+  (ngSubmit)="createIssue(createIssueForm.value)"
+>
+  <div class="box">
+    <div class="head">
+      <h1>Create User Stories/Task/Bugs</h1>
+    </div>
+    <div>
+      <div class="row1">
+        <mat-form-field
+          floatLabel="always"
+          appearance="fill"
+          class="input-field"
+        >
+          <mat-label>Summary</mat-label>
+          <input ngModel id="summary" name="summary" maxlength="150" matInput required />
+        </mat-form-field>
+      </div>
+      <mat-grid-list cols="2" rowHeight="6:1">
+        <mat-grid-tile
+          ><mat-form-field
+            floatLabel="always"
+            appearance="fill"
+            class="input-field-left"
+          >
+            <mat-label>Type</mat-label>
+
+            <mat-select ngModel id="type" name="type" type="number" required>
+              <mat-option value="" selected disabled>Select Type</mat-option>
+            <mat-option *ngFor="let type of types" value="{{ type.id}}"> {{type.label}}</mat-option>
+            </mat-select>
+             </mat-form-field></mat-grid-tile>
+        <mat-grid-tile
+          ><mat-form-field
+            floatLabel="always"
+            appearance="fill"
+            class="input-field-right"
+          >
+
+            <mat-label>Project</mat-label>
+            <mat-select ngModel id="projectID" name="projectID" type="text" required>
+              <mat-option value="" selected disabled>Select Project</mat-option>
+            <mat-option *ngFor="let project of projects" value="{{ project.projectID}}"> {{project.projectName}}</mat-option>
+            </mat-select>
+            </mat-form-field
+        ></mat-grid-tile>
+      </mat-grid-list>
+
+      <div class="row3">
+        <mat-form-field class="desc-full-width" appearance="fill">
+          <mat-label>Description</mat-label>
+          <textarea ngModel name="description" id="description" matInput placeholder="write description" maxlength="500"></textarea>
+        </mat-form-field>
+      </div>
+
+      <mat-grid-list cols="2" rowHeight="6:1">
+        <mat-grid-tile
+          ><mat-form-field appearance="fill" class="input-field-left">
+            <mat-label>Priority</mat-label>
+              <mat-select ngModel id="priority" name="priority" type="number" required>
+                <mat-option value="" selected disabled>Select Priority</mat-option>
+                <mat-option *ngFor="let priority of priorities" value="{{priority.id}}">{{priority.label}}</mat-option>
+              </mat-select>
+
+          </mat-form-field></mat-grid-tile
+        >
+        <mat-grid-tile
+          ><mat-form-field appearance="fill" class="input-field-right">
+            <mat-label>Asignee</mat-label>
+            <mat-select ngModel id="assignee" name="assignee" type="number" required>
+              <mat-option value="" selected disabled>Select Assignee</mat-option>
+            <mat-option *ngFor="let assignee of asignees" value="{{ assignee.id}}"> {{assignee.name}}</mat-option>
+            </mat-select>
+          </mat-form-field></mat-grid-tile
+        >
+      </mat-grid-list>
+
+      <mat-grid-list cols="2" rowHeight="6:1">
+        <mat-grid-tile
+          ><mat-form-field appearance="fill" class="input-field-left">
+            <mat-label>Tags</mat-label>
+            <textarea ngModel name="tags" id="tags" placeholder="Enter Comma Seperated Tags" maxlength="100" matInput></textarea>
+          </mat-form-field></mat-grid-tile
+        >
+        <mat-grid-tile
+          ><mat-form-field appearance="fill" class="input-field-right">
+            <mat-label>Sprint</mat-label>
+            <mat-select ngModel id="sprint" name="sprint" type="text">
+              <mat-option value="" selected disabled>Select Sprint</mat-option>
+              <mat-option value="Sprint 1">Sprint 1</mat-option>
+              <mat-option value="Sprint 2">Sprint 2</mat-option>
+            </mat-select>
+          </mat-form-field></mat-grid-tile
+        >
+      </mat-grid-list>
+
+      <div class="row1">
+        <mat-form-field
+          floatLabel="always"
+          appearance="fill"
+          class="input-field-half"
+        >
+          <mat-label>Story Points</mat-label>
+          <input ngModel name="storyPoint" id="storyPoint" matInput/>
+        </mat-form-field>
+      </div>
+      <div class="form-btn-container">
+        <button type="button" (click)="createIssueForm.resetForm()" mat-flat-button class="btn-form-rs" color="dark">RESET</button>
+        <button type="submit" mat-stroked-button class="btn-form">CREATE</button>
+      </div>
+    </div>
+  </div>
+</form>
+

@@ -1,0 +1,21 @@
+<!-- <app-navbar></app-navbar> -->
+<!-- <app-create-issues></app-create-issues> -->
+<!-- <app-signup></app-signup> -->
+
+
+<!-- <mat-slider min="1" max="100" step="1" value="1"></mat-slider> -->
+
+
+
+
+<mat-drawer-container>
+  <mat-drawer mode="side" opened="true">
+    <app-sidenav></app-sidenav>
+  </mat-drawer>
+  <mat-drawer-content>
+    <app-header></app-header>
+    <router-outlet></router-outlet>
+    <!-- <app-insights></app-insights>
+    <app-issue-details></app-issue-details> -->
+  </mat-drawer-content>
+</mat-drawer-container>

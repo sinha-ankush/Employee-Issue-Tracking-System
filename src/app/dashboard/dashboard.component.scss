@@ -1,0 +1,48 @@
+.create-container{
+  margin: 40px;
+}
+
+.input-field, .desc-full-width{
+  width: 100%;
+}
+
+.input-field-left{
+  width: 100%;
+  padding-right: 20px;
+}
+
+.input-field-right{
+  width: 100%;
+  padding-left: 20px;
+}
+
+.input-field-half{
+  width: 50%;
+  padding-right: 20px;
+}
+
+.form-btn-container{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-form, .btn-form-rs{
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+
+.btn-form{
+  background-color: black;
+  color: white;
+
+}
+
+
+button{
+  margin-right: 3em;
+  border: 1px solid black;
+}
+
+

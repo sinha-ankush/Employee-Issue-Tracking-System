@@ -1,0 +1,179 @@
+<div class="home-container">
+  <div class="head">
+    <h1>Project Details</h1>
+    <a href="home/insights" mat-stroked-button class="btn-form" >VIEW INSIGHT</a>
+  </div>
+<!-- Project name field with two columns in grid style -->
+  <mat-grid-list cols="2" rowHeight="6:1">
+    <mat-grid-tile
+      ><mat-form-field appearance="fill" class="input-field-left">
+        <mat-label>Project Name</mat-label>
+        <mat-select ngModel (ngModelChange)="projectChanged($event)" id="project" name="project" type="number">
+          <mat-option value="" selected disabled>Select Project</mat-option>
+        <mat-option *ngFor="let project of projects" value="{{ project.projectID}}"> {{project.projectName}}</mat-option>
+        </mat-select>
+      </mat-form-field></mat-grid-tile
+    >
+    <mat-grid-tile
+      ><mat-form-field appearance="fill" class="input-field-right">
+        <mat-label>Project Owner</mat-label>
+        <mat-select ngModel id="owner" name="owner" type="number">
+          <mat-option value="" selected disabled>Select Owner</mat-option>
+        <mat-option *ngFor="let user of owner" value="{{ user.id}}"> {{user.name}}</mat-option>
+        </mat-select>
+      </mat-form-field></mat-grid-tile
+    >
+  </mat-grid-list>
+  <p class="home-date">
+    Start Date : 31-01-2022 &nbsp;&nbsp;| &nbsp;&nbsp; End Date : 31-01-2022
+  </p>
+<!-- creating filters in grid style for two columns  -->
+  <mat-grid-list cols="4" rowHeight="6:1">
+    <mat-grid-tile
+      ><mat-form-field appearance="fill" class="input-field-1">
+        <mat-label>Filter Assignee</mat-label>
+        <mat-select ngModel (ngModelChange)="assigneeChanged($event)" id="assignee" name="assignee" type="number">
+          <mat-option value="" selected disabled>Select Assignee</mat-option>
+        <mat-option *ngFor="let assignee of owner" value="{{ assignee.id}}"> {{assignee.name}}</mat-option>
+        </mat-select>
+      </mat-form-field></mat-grid-tile
+    >
+    <mat-grid-tile
+      ><mat-form-field appearance="fill" class="input-field-2">
+        <mat-label>Filter Priority</mat-label>
+        <mat-select ngModel (ngModelChange)="priorityChanged($event)" id="priority" name="priority" type="number">
+          <mat-option value="" selected disabled>Select Priority</mat-option>
+        <mat-option *ngFor="let priority of priorities" value="{{ priority.id}}"> {{priority.label}}</mat-option>
+        </mat-select>
+      </mat-form-field></mat-grid-tile
+    >
+  </mat-grid-list>
+</div>
+<!-- card area for importing all cards with 4 columns using grid styling with angular material -->
+
+ <!-- flex column for all header fields to arrange in a line -->
+<div class="card-area">
+  <mat-grid-list cols="4" rowHeight="6:1">
+    <mat-grid-tile> To Do </mat-grid-tile>
+    <mat-grid-tile>
+      <p>DEVELOPMENT</p>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <p>TESTING</p>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <p>COMPLETED</p>
+    </mat-grid-tile>
+  </mat-grid-list>
+ <!-- flex row for all cards in accoridng siledasin a line -->
+  <div class="flex-row">
+    <div class="flex-col">
+        <mat-card class="project-card" *ngFor="let issue of getIssuesStatusWise(1)">
+          <a href="/home/issue-detail/{{issue.id}}">
+            <div class="card-header">
+              <h3>ID - {{issue.id}}</h3>
+              <h3>{{getDate(issue.createdOn)}}</h3>
+            </div>
+            <mat-card-content class="card-content">
+              <h3>{{issue.summary}}</h3>
+              <p>
+                {{issue.description}}
+              </p>
+            </mat-card-content>
+            <div class="card-footer">
+              <div class="dp">
+                <img
+                  src="https://material.angular.io/assets/img/examples/shiba1.jpg"
+                  alt="dp"
+                />
+              </div>
+              <div>
+                <h2>{{issue.createdBy.name}}</h2>
+              </div>
+            </div>
+          </a>
+        </mat-card>
+    </div>
+    <div class="flex-col">
+        <mat-card class="project-card" *ngFor="let issue of getIssuesStatusWise(2)">
+          <a href="/home/issue-detail/{{issue.id}}">
+            <div class="card-header">
+              <h3>ID - {{issue.id}}</h3>
+              <h3>{{getDate(issue.createdOn)}}</h3>
+            </div>
+            <mat-card-content class="card-content">
+              <h3>{{issue.summary}}</h3>
+              <p>
+                {{issue.description}}
+              </p>
+            </mat-card-content>
+            <div class="card-footer">
+              <div class="dp">
+                <img
+                  src="https://material.angular.io/assets/img/examples/shiba1.jpg"
+                  alt="dp"
+                />
+              </div>
+              <div>
+                <h2>{{issue.createdBy.name}}</h2>
+              </div>
+            </div>
+          </a>
+        </mat-card>
+    </div>
+    <div class="flex-col">
+        <mat-card class="project-card" *ngFor="let issue of getIssuesStatusWise(3)">
+          <a href="/home/issue-detail/{{issue.id}}">
+            <div class="card-header">
+              <h3>ID - {{issue.id}}</h3>
+              <h3>{{getDate(issue.createdOn)}}</h3>
+            </div>
+            <mat-card-content class="card-content">
+              <h3>{{issue.summary}}</h3>
+              <p>
+                {{issue.description}}
+              </p>
+            </mat-card-content>
+            <div class="card-footer">
+              <div class="dp">
+                <img
+                  src="https://material.angular.io/assets/img/examples/shiba1.jpg"
+                  alt="dp"
+                />
+              </div>
+              <div>
+                <h2>{{issue.createdBy.name}}</h2>
+              </div>
+            </div>
+          </a>
+        </mat-card>
+    </div>
+    <div class="flex-col">
+        <mat-card class="project-card" *ngFor="let issue of getIssuesStatusWise(4)">
+          <a href="/home/issue-detail/{{issue.id}}">
+            <div class="card-header">
+              <h3>ID - {{issue.id}}</h3>
+              <h3>{{getDate(issue.createdOn)}}</h3>
+            </div>
+            <mat-card-content class="card-content">
+              <h3>{{issue.summary}}</h3>
+              <p>
+                {{issue.description}}
+              </p>
+            </mat-card-content>
+            <div class="card-footer">
+              <div class="dp">
+                <img
+                  src="https://material.angular.io/assets/img/examples/shiba1.jpg"
+                  alt="dp"
+                />
+              </div>
+              <div>
+                <h2>{{issue.createdBy.name}}</h2>
+              </div>
+            </div>
+          </a>
+        </mat-card>
+    </div>
+  </div>
+</div>

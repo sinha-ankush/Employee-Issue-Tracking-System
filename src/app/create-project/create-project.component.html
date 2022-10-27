@@ -1,0 +1,52 @@
+<div class="bigbox">
+  <form class="create-container" #createProjectForm="ngForm" (ngSubmit)="createProject(createProjectForm.value)">
+    <h1>Create Project</h1>
+    <mat-grid-list cols="2" rowHeight="6:1">
+      <mat-grid-tile
+        ><mat-form-field
+
+          floatLabel="always"
+          appearance="fill"
+          class="input-field-left"
+        >
+          <mat-label>Project Name</mat-label>
+          <input ngModel name="projectName" maxlength="150" (keypress)="omit_special_char($event)" matInput required [disabled]="disabledForm" /> </mat-form-field
+      ></mat-grid-tile>
+      <mat-grid-tile
+        ><mat-form-field
+          floatLabel="always"
+          appearance="fill"
+          class="input-field-right"
+        >
+          <mat-label>Owner</mat-label>
+          <mat-select  ngModel id="projectOwner" name="projectOwner" type="number" required [disabled]="disabledForm">
+            <mat-option value="" selected disabled> Select Owner</mat-option>
+            <mat-option *ngFor="let own of owner" value="{{ own.id}}"> {{own.name}}</mat-option>
+          </mat-select>
+           </mat-form-field
+      ></mat-grid-tile>
+    </mat-grid-list>
+
+    <mat-grid-list cols="2" rowHeight="6:1">
+      <mat-grid-tile><mat-form-field
+          floatLabel="always"
+          appearance="fill"
+          class="input-field-left">
+        <mat-label>Project Start Date</mat-label>
+          <input ngModel type="date" id="projectStartDate" name="projectStartDate" matInput [disabled]="disabledForm" /> </mat-form-field>
+        </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field
+          floatLabel="always"
+          appearance="fill"
+          class="input-field-right">
+          <mat-label>Project End Date</mat-label>
+          <input ngModel type="date" id="projectEndDate" name="projectEndDate" matInput [disabled]="disabledForm" /> </mat-form-field></mat-grid-tile>
+    </mat-grid-list>
+
+    <div class="form-btn-container">
+        <button type="button" (click)="createProjectForm.resetForm()" mat-flat-button class="btn-form-rs" color="dark" [disabled]="disabledForm">RESET</button>
+        <button type="submit" mat-stroked-button class="btn-form" [disabled]="disabledForm">CREATE</button>
+      </div>
+  </form>
+</div>
